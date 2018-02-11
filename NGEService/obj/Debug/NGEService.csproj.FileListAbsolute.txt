@@ -1,0 +1,10 @@
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\NGEService.dll.config
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\NGEService.dll
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\NGEService.pdb
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\obj\Debug\NGEService.dll
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\obj\Debug\NGEService.pdb
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\EntityFramework.dll
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\EntityFramework.SqlServer.dll
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\EntityFramework.xml
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\EntityFramework.SqlServer.xml
+F:\work\C# programme\2017Spring\Programme\NGESys\NGEService\bin\zh-Hans\EntityFramework.resources.dll

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NGEsysDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="articleID" />
+    </Key>
+    <Property Name="articleID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="aPubDate" Type="date" Nullable="false" />
+    <Property Name="author" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="department" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="aStatus" Type="int" Nullable="false" />
+    <Property Name="aPath" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="onLayout" Type="char" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="dcode" />
+    </Key>
+    <Property Name="dcode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="dptName" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Layout">
+    <Key>
+      <PropertyRef Name="layoutID" />
+    </Key>
+    <Property Name="layoutID" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="lPubDate" Type="date" Nullable="false" />
+    <Property Name="editor" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="department" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="lStatus" Type="int" Nullable="false" />
+    <Property Name="lPath" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="pcode" />
+    </Key>
+    <Property Name="pcode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="pstnName" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="staffID" />
+    </Key>
+    <Property Name="staffID" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="stfName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="stfYearIn" Type="int" Nullable="false" />
+    <Property Name="stfPstn" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="stfDpt" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="stfDgr" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="stfGrdtdFrm" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6035: 关系“FK_Article_Department”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+        <Association Name="FK_Article_Department" />-->
+  <Association Name="FK_Article_Layout">
+    <End Role="Layout" Type="Self.Layout" Multiplicity="0..1" />
+    <End Role="Article" Type="Self.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layout">
+        <PropertyRef Name="layoutID" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="onLayout" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Article_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Article" Type="Self.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="staffID" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--生成过程中发现错误:
+警告 6035: 关系“FK_Layout_Department”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+        <Association Name="FK_Layout_Department" />-->
+  <Association Name="FK_Layout_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Layout" Type="Self.Layout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="staffID" />
+      </Principal>
+      <Dependent Role="Layout">
+        <PropertyRef Name="editor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--生成过程中发现错误:
+警告 6035: 关系“FK_Staff_Department”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+        <Association Name="FK_Staff_Department" />-->
+  <!--生成过程中发现错误:
+警告 6035: 关系“FK_Staff_Position”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+        <Association Name="FK_Staff_Position" />-->
+  <EntityContainer Name="NGEsysDBModelStoreContainer">
+    <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Layout" EntityType="Self.Layout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Article_Layout" Association="Self.FK_Article_Layout">
+      <End Role="Layout" EntitySet="Layout" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Article_Staff" Association="Self.FK_Article_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Layout_Staff" Association="Self.FK_Layout_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Layout" EntitySet="Layout" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

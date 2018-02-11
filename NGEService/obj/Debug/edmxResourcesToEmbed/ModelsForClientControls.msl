@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NGEsysDBModelStoreContainer" CdmEntityContainer="NGEsysDBEntities">
+    <EntitySetMapping Name="Article">
+      <EntityTypeMapping TypeName="NGEsysDBModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="articleID" ColumnName="articleID" />
+          <ScalarProperty Name="aPubDate" ColumnName="aPubDate" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="aStatus" ColumnName="aStatus" />
+          <ScalarProperty Name="aPath" ColumnName="aPath" />
+          <ScalarProperty Name="onLayout" ColumnName="onLayout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="NGEsysDBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="dcode" ColumnName="dcode" />
+          <ScalarProperty Name="dptName" ColumnName="dptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layout">
+      <EntityTypeMapping TypeName="NGEsysDBModel.Layout">
+        <MappingFragment StoreEntitySet="Layout">
+          <ScalarProperty Name="layoutID" ColumnName="layoutID" />
+          <ScalarProperty Name="lPubDate" ColumnName="lPubDate" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="lStatus" ColumnName="lStatus" />
+          <ScalarProperty Name="lPath" ColumnName="lPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Position">
+      <EntityTypeMapping TypeName="NGEsysDBModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="pcode" ColumnName="pcode" />
+          <ScalarProperty Name="pstnName" ColumnName="pstnName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="NGEsysDBModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="staffID" ColumnName="staffID" />
+          <ScalarProperty Name="stfName" ColumnName="stfName" />
+          <ScalarProperty Name="stfYearIn" ColumnName="stfYearIn" />
+          <ScalarProperty Name="stfPstn" ColumnName="stfPstn" />
+          <ScalarProperty Name="stfDpt" ColumnName="stfDpt" />
+          <ScalarProperty Name="stfDgr" ColumnName="stfDgr" />
+          <ScalarProperty Name="stfGrdtdFrm" ColumnName="stfGrdtdFrm" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

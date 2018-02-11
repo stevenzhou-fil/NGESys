@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="NGEService.GeneralService" CodeBehind="GeneralService.svc.cs" %>

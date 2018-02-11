@@ -1,0 +1,9 @@
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\obj\Debug\ConsoleApp_AddData.csprojResolveAssemblyReference.cache
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\bin\Debug\ConsoleApp_AddData.exe.config
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\bin\Debug\ConsoleApp_AddData.exe
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\bin\Debug\ConsoleApp_AddData.pdb
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\bin\Debug\NGEService.dll
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\bin\Debug\NGEService.pdb
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\bin\Debug\NGEService.dll.config
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\obj\Debug\ConsoleApp_AddData.exe
+F:\work\C# programme\2017Spring\Programme\NGESys\ConsoleApp_AddData\obj\Debug\ConsoleApp_AddData.pdb

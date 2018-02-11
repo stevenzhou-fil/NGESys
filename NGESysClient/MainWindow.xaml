@@ -1,0 +1,55 @@
+﻿<Window x:Name="mainWin" x:Class="NGESysClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NGESysClient"
+        mc:Ignorable="d"    
+        Loaded="mainWin_Loaded"
+        Title="报业集团采编系统" WindowState="Maximized" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="3" Panel.ZIndex="1" FontSize="16" Height="30" VerticalAlignment="Center" IsMainMenu="True">
+            <MenuItem Header="文件" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30"/>
+            <MenuItem Header="账号" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30"></MenuItem>
+            <MenuItem Header="关于" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30"></MenuItem>
+        </Menu>
+        <ToolBar Grid.Row="1" Grid.ColumnSpan="3" Height="40" Panel.ZIndex="1" >
+
+        </ToolBar>
+        <GridSplitter Grid.RowSpan="3" Grid.Column="1" Width="5" />
+
+        <Grid Grid.Row="2" Grid.Column="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label x:Name="GreetingLabel" Grid.Row="0" Content="你好，" FontSize="24"/>
+            <Label Grid.Row="1" Height="auto" Content="从下面开始你的工作" FontSize="16" FontStyle="Italic" HorizontalContentAlignment="Center" Background="#FFD3CECE" Foreground="White" />
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <ComboBox x:Name="WorkSelectComboBox" Height="40" Margin="0,30,0,0" Width="200" HorizontalContentAlignment="Center" FontSize="30" Text="选择你要进行的工作" SelectionChanged="WorkSelectComboBox_SelectionChanged" >
+                    <ComboBoxItem x:Name="WorkCbi_Add" Content="添加报导" HorizontalAlignment="Left" Width="198" Height="30" FontSize="16" VerticalContentAlignment="Center" Visibility="Collapsed" Cursor="Hand" />
+                    <ComboBoxItem x:Name="WorkCbi_ProofRead" Content="查阅校对" HorizontalAlignment="Left" Width="198" Height="30" FontSize="16" VerticalContentAlignment="Center" Visibility="Collapsed" Cursor="Hand" />
+                    <ComboBoxItem x:Name="WorkCbi_Edit" Content="版面编辑" HorizontalAlignment="Left" Width="198" Height="30" FontSize="16" VerticalContentAlignment="Center" Visibility="Collapsed" Cursor="Hand" />
+                    <ComboBoxItem x:Name="WorkCbi_Check" Content="版面审核" HorizontalAlignment="Left" Width="198" Height="30" FontSize="16" VerticalContentAlignment="Center" Visibility="Collapsed" Cursor="Hand" />
+                </ComboBox>
+                <Label Height="auto" Content="进行一些查询" FontSize="16" FontStyle="Italic" HorizontalContentAlignment="Center" Background="#FFD3CECE" Foreground="White" Margin="0,30,0,0" />
+                <Button x:Name="ShowWorksButton" Content="查看近期工作" Width="200" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" FontSize="16" />
+                <Button x:Name="NameListButton" Content="花名册" Margin="0,30,0,0" Width="200" Height="30" FontStyle="Italic" FontSize="16" />
+            </StackPanel>
+        </Grid>
+
+        <Frame x:Name="workContainer" Grid.Row="2" Grid.Column="2" Margin="5"></Frame>
+
+    </Grid>
+</Window>
